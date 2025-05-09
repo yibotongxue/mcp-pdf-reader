@@ -1,0 +1,11 @@
+{
+    "servers": {
+        "my-mcp-server-3c0644eb": {
+            "type": "stdio",
+            "command": "node",
+            "args": [
+                "${workspaceFolder}/dist/server.js"
+            ]
+        }
+    }
+}
