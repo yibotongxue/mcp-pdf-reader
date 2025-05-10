@@ -1,19 +1,11 @@
-import { PdfReader } from "pdfreader";
+import pdfParse from 'pdf-parse';
 import axios from 'axios';
 import { Buffer } from 'buffer';
 import fs from 'fs';
 
 const parsePdf = async (path: string): Promise<string> => {
-    let content = "";
-    return new Promise((resolve, reject) => {
-        new PdfReader().parseFileItems(path, (err, item) => {
-            if (err) reject(err);
-            else if (!item) resolve(content);
-            else if (item.text) {
-                content += item.text + " ";
-            }
-        });
-    });
+    const buffer = fs.readFileSync(path);
+    return (await pdfParse(buffer)).text;
 }
 
 export const readPdfContent = async (path: string) => {
@@ -49,21 +41,13 @@ const getPdfAsBuffer = async (url: string): Promise<Buffer> => {
 }
 
 const parsePdfWithUrl = async (url: string): Promise<string> => {
-    let content = "";
     if (!url) {
-        content = "URL is required";
+        return "URL is required";
     }
     try {
         const buffer = await getPdfAsBuffer(url);
-        return new Promise((resolve, reject) => {
-            new PdfReader().parseBuffer(buffer, (err, item) => {
-                if (err) reject(err);
-                else if (!item) resolve(content);
-                else if (item.text) {
-                    content += item.text + " ";
-                }
-            });
-        });
+        return (await pdfParse(buffer)).text;
+
     } catch (error) {
         return "Error reading file";
     }

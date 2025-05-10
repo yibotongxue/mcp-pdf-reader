@@ -15,7 +15,6 @@
     "@modelcontextprotocol/sdk": "^1.11.1",
     "axios": "^1.9.0",
     "pdf-parse": "^1.1.1",
-    "pdfreader": "^3.0.7",
     "zod": "^3.24.4"
   },
   "devDependencies": {
