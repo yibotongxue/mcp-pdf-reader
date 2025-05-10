@@ -13,6 +13,7 @@
   "type": "module",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.11.1",
+    "axios": "^1.9.0",
     "pdf-parse": "^1.1.1",
     "pdfreader": "^3.0.7",
     "tsup": "^8.4.0",
@@ -20,6 +21,7 @@
     "zod": "^3.24.4"
   },
   "devDependencies": {
+    "@types/axios": "^0.9.36",
     "@types/node": "^22.15.17"
   }
 }
