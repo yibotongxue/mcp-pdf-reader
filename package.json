@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsup src/server.ts"
+    "start": "bun src/server.ts"
   },
   "keywords": [],
   "author": "",
@@ -16,8 +16,6 @@
     "axios": "^1.9.0",
     "pdf-parse": "^1.1.1",
     "pdfreader": "^3.0.7",
-    "tsup": "^8.4.0",
-    "typescript": "^5.8.3",
     "zod": "^3.24.4"
   },
   "devDependencies": {

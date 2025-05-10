@@ -2,9 +2,12 @@
     "servers": {
         "my-mcp-server-3c0644eb": {
             "type": "stdio",
-            "command": "node",
+            "command": "bun",
             "args": [
-                "${workspaceFolder}/dist/server.js"
+                "run",
+                "--cwd",
+                "${workspaceFolder}",
+                "start"
             ]
         }
     }
